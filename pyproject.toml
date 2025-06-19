@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codeguardian"
+version = "0.1.0"
+description = "A GitHub bot for automated code quality and documentation analysis"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "PyGithub>=2.1.1",
+    "python-dotenv>=1.0.0",
+    "coverage>=7.3.2",
+    "radon>=6.0.1",
+    "pylint>=3.0.2",
+    "requests>=2.31.0",
+    "pyyaml>=6.0.1",
+]
+long_description = """
+CodeGuardian is an intelligent GitHub bot that automates code quality and documentation analysis. 
+It helps maintain high standards by analyzing pull requests for documentation coverage, test coverage, 
+code quality metrics, and PR quality metrics.
+
+Key Features:
+- 📝 Documentation coverage analysis
+- 🧪 Test coverage tracking
+- 🎯 Code quality metrics
+- 📊 PR quality assessment
+- 🤖 Automated feedback
+- 🔄 Continuous monitoring
+"""
+keywords = [
+    "github",
+    "bot",
+    "code-quality",
+    "documentation",
+    "testing",
+    "automation",
+    "ci-cd",
+    "code-review"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "pytest-asyncio>=0.23.3",
+    "black>=25.1.0",
+    "isort>=5.13.2",
+    "flake8>=7.2.0",
+    "pre-commit>=4.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/MYounas126/Github-Bot"
+Documentation = "https://github.com/MYounas126/Github-Bot#readme"
+Repository = "https://github.com/MYounas126/Github-Bot.git"
+Issues = "https://github.com/MYounas126/Github-Bot/issues"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=codeguardian --cov-report=term-missing" 

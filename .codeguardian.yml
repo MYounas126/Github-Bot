@@ -1,0 +1,19 @@
+# CodeGuardian Bot Configuration
+
+# Coverage analysis settings
+coverage:
+  threshold: 80  # Minimum coverage percentage
+  format: cobertura  # Coverage report format (cobertura or lcov)
+
+# Code quality analysis settings
+analysis:
+  max_function_length: 50  # Maximum lines per function
+  max_nesting_depth: 3  # Maximum nesting depth
+  max_complexity: 10  # Maximum cyclomatic complexity
+  max_lines: 300  # Maximum lines per file
+
+# PR quality settings
+pr_quality:
+  require_issue_link: true  # Require linked issues
+  require_test_summary: true  # Require testing information
+  min_description_length: 50  # Minimum PR description length 
